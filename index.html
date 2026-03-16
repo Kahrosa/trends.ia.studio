@@ -41,12 +41,26 @@
         .hover-scale { transition: transform 0.3s ease, box-shadow 0.3s ease; }
         .hover-scale:hover { transform: translateY(-5px); box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04); }
         .gradient-yellow { background: linear-gradient(135deg, #ffeb3b 0%, #ffc107 100%); }
+        
+        /* Ocultar barra de rolagem no carrossel de cartões */
+        .hide-scroll-bar { -ms-overflow-style: none; scrollbar-width: none; }
+        .hide-scroll-bar::-webkit-scrollbar { display: none; }
     </style>
 </head>
 <body class="bg-tripo-light text-gray-800 antialiased overflow-x-hidden">
 
-    <!-- Wrapper for Header and Hero with Gradient Background -->
-    <div class="bg-gradient-to-br from-[#e4e9f0] via-[#eceef1] to-[#fcebe7] relative overflow-hidden pb-12">
+    <!-- Wrapper for Header and Hero -->
+    <div class="relative overflow-hidden pb-12 bg-tripo-light">
+        
+        <!-- Fundo Criativo: Renderização 3D Geométrica Ultrarrealista (Estilo Clean e Premium) -->
+        <div class="absolute inset-0 z-0 pointer-events-none">
+            <!-- Imagem 3D geométrica de alta definição -->
+            <img src="https://images.unsplash.com/photo-1518640467707-6811f4a6ab73?q=80&w=2560&auto=format&fit=crop" alt="Textura 3D Premium" class="w-full h-full object-cover opacity-50 grayscale mix-blend-multiply">
+            
+            <!-- Gradientes para garantir leitura perfeita do texto e integração suave com a cor do site -->
+            <div class="absolute inset-0 bg-gradient-to-r from-tripo-light via-tripo-light/80 to-transparent"></div>
+            <div class="absolute inset-0 bg-gradient-to-t from-tripo-light via-transparent to-transparent"></div>
+        </div>
         
         <!-- Header / Navbar -->
         <header class="w-full absolute top-0 left-0 right-0 z-50">
@@ -61,8 +75,7 @@
                 <!-- Desktop Nav -->
                 <nav class="hidden md:flex items-center font-medium text-sm bg-white rounded-b-2xl shadow-md">
                     <a href="#" class="bg-tripo-red text-white px-8 py-5 rounded-b-2xl hover:bg-red-700 transition">Início</a>
-                    <a href="#serviços" class="px-8 py-5 text-gray-700 hover:text-tripo-red transition">Serviços</a>
-                    <a href="#sobre" class="px-8 py-5 text-gray-700 hover:text-tripo-red transition">Sobre</a>
+                    <a href="#cartoes-virtuais" class="px-8 py-5 text-gray-700 hover:text-tripo-red transition">Serviços</a>
                     <a href="#contato" class="px-8 py-5 text-gray-700 hover:text-tripo-red transition">Contato</a>
                 </nav>
 
@@ -75,8 +88,7 @@
             <!-- Mobile Nav (Hidden by default) -->
             <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-gray-100 px-6 py-4 space-y-4 shadow-lg absolute w-full top-full">
                 <a href="#" class="block text-tripo-red font-medium">Início</a>
-                <a href="#seviços" class="block text-gray-600 font-medium">Serviços</a>
-                <a href="#sobre" class="block text-gray-600 font-medium">Sobre</a>
+                <a href="#cartoes-virtuais" class="block text-gray-600 font-medium">Serviços</a>
                 <a href="#contato" class="block text-gray-600 font-medium">Contato</a>
             </div>
         </header>
@@ -88,24 +100,21 @@
                     Inovação em cada detalhe
                 </h1>
                 <p class="text-2xl text-gray-600 mb-10 font-medium max-w-lg mx-auto lg:mx-0">
-                    
+                    A Trends IA Studio oferece soluções visuais ultrarrealistas e em alta definição para elevar o impacto e a conversão do seu negócio.
                 </p>
                 <button class="bg-tripo-red text-white font-medium px-8 py-4 rounded-full shadow-lg hover:bg-red-700 hover:shadow-xl transition-all hover:-translate-y-1">
                     Conheça Os Serviços Premium
                 </button>
             </div>
-            
-        
         </section>
     </div>
 
     <!-- Overlapping Cards Section -->
-    <section class="relative z-20 max-w-7xl mx-auto px-6 -mt-32">
+    <section class="relative z-20 max-w-7xl mx-auto px-6 -mt-32 mb-32">
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
             
             <!-- Card 1: Restauração de fotos -->
             <div class="rounded-3xl w-full aspect-[9/16] bg-gray-900 shadow-2xl flex flex-col justify-end p-6 hover-scale relative overflow-hidden group">
-                <!-- Wrapper do Iframe para forçar o corte vertical correto estilo Reels -->
                 <div class="absolute inset-0 w-full h-full overflow-hidden z-0 pointer-events-none">
                     <iframe 
                         src="https://www.youtube.com/embed/OfWfqEqcXoo?autoplay=1&mute=1&loop=1&playlist=OfWfqEqcXoo&controls=0&showinfo=0&rel=0&disablekb=1&modestbranding=1" 
@@ -123,7 +132,6 @@
 
             <!-- Card 2: Robotrix -->
             <div class="rounded-3xl w-full aspect-[9/16] bg-gray-900 shadow-2xl flex flex-col justify-end p-6 hover-scale relative overflow-hidden group">
-                <!-- Wrapper do Iframe para Shorts (corte vertical) estilo Reels -->
                 <div class="absolute inset-0 w-full h-full overflow-hidden z-0 pointer-events-none">
                     <iframe 
                         src="https://www.youtube.com/embed/ElKFmF0ayXA?autoplay=1&mute=1&loop=1&playlist=ElKFmF0ayXA&controls=0&showinfo=0&rel=0&disablekb=1&modestbranding=1" 
@@ -139,10 +147,8 @@
                 </div>
             </div>
 
-
             <!-- Card 3: Antes e depois -->
             <div class="rounded-3xl w-full aspect-[9/16] bg-gray-900 shadow-2xl flex flex-col justify-end p-6 hover-scale relative overflow-hidden group">
-                <!-- Wrapper do Iframe para Shorts (corte vertical) estilo Reels -->
                 <div class="absolute inset-0 w-full h-full overflow-hidden z-0 pointer-events-none">
                     <iframe 
                         src="https://www.youtube.com/embed/VOIBZiZBDK4?autoplay=1&mute=1&loop=1&playlist=VOIBZiZBDK4&controls=0&showinfo=0&rel=0&disablekb=1&modestbranding=1" 
@@ -154,15 +160,12 @@
                 <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent z-10"></div>
                 <div class="relative z-20 text-white transform translate-y-2 group-hover:translate-y-0 transition-transform duration-300">
                     <h3 class="font-heading font-bold text-2xl"></h3>
-                    <p class="text-sm opacity-90 font-medium mt-1">Criamos sites, Landing Pages de alta conversão.
-Seu negócio aberto 24h </p>
+                    <p class="text-sm opacity-90 font-medium mt-1">Criamos sites, Landing Pages de alta conversão. Seu negócio aberto 24h</p>
                 </div>
             </div>
-
            
             <!-- Card 4: Criativos Publicitários -->
             <div class="rounded-3xl w-full aspect-[9/16] bg-gray-900 shadow-2xl flex flex-col justify-end p-6 hover-scale relative overflow-hidden group">
-                <!-- Wrapper do Iframe para Shorts (corte vertical) estilo Reels -->
                 <div class="absolute inset-0 w-full h-full overflow-hidden z-0 pointer-events-none">
                     <iframe 
                         src="https://www.youtube.com/embed/0Nch2sqXyFQ?autoplay=1&mute=1&loop=1&playlist=0Nch2sqXyFQ&controls=0&showinfo=0&rel=0&disablekb=1&modestbranding=1" 
@@ -177,75 +180,60 @@ Seu negócio aberto 24h </p>
                     <p class="text-sm opacity-90 font-medium mt-1">Vídeos otimizados com seu produto para altas conversões nas suas redes sociais</p>
                 </div>
             </div>
-
-
         </div>
     </section>
 
-    <!-- Sobre Section -->
-    <section id="sobre" class="py-24 px-6 text-center max-w-3xl mx-auto">
-        <h4 class="text-sm font-bold uppercase tracking-widest text-gray-500 mb-2"></h4>
-        <h2 class="font-heading text-4xl font-extrabold text-tripo-dark mb-6">Sobre a <br>Trends Ia Studio</h2>
-        <p class="text-gray-600 mb-8 leading-relaxed">
-            Sou um parágrafo. Aqui você pode adicionar e editar seu texto. É fácil, basta clicar em "Editar texto" ou clicar duas vezes sobre mim. Você também pode alterar a fonte e mais. Sou um ótimo lugar para você compartilhar a sua história com os visitantes.
-        </p>
-        
-    </section>
-
-  
-
-    <!-- Nossos Games Section -->
-    <section id="serviços" class="bg-white py-24 border-t border-gray-100">
-        <div class="max-w-7xl mx-auto px-6">
-            <div class="text-center mb-16 max-w-2xl mx-auto">
-                <h2 class="font-heading text-4xl font-extrabold text-tripo-dark mb-6">Outros serviços</h2>
-                <p class="text-gray-600">
-                    No Trends IA Studio, oferecemos design de excelência para criar resultados visuais ultrarrealistas e otimizados para conversão. 
-                    Transformamos ideias em experiências imersivas que geram impacto real para o seu negócio.
+    <!-- Cartões Virtuais Section -->
+    <section id="cartoes-virtuais" class="py-24 px-6 bg-tripo-dark relative z-20">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-14">
+                <h2 class="font-heading text-4xl font-extrabold text-white mb-4">Cartões Virtuais</h2>
+                <p class="text-gray-300 max-w-2xl mx-auto text-lg">
+                    Soluções interativas e de alto padrão para o seu link na bio. Modelos exclusivos, com design ultrarrealista e otimizados para maximizar seus agendamentos e contatos.
+                </p>
             </div>
 
-            <!-- Lista de Games em Grid Desalinhado -->
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-24 items-center">
+            <!-- Carrossel Horizontal de Cartões -->
+            <div class="flex overflow-x-auto gap-6 pb-10 pt-4 snap-x snap-mandatory hide-scroll-bar items-center px-4 md:px-0">
                 
-                <!-- Game 1: Kipon -->
-                <div class="bg-tripo-light rounded-3xl p-8 lg:p-10 shadow-lg border border-gray-100 hover-scale lg:ml-auto max-w-md w-full">
-                    <div class="flex items-center gap-5 mb-6">
-                        <div class="w-20 h-20 rounded-2xl overflow-hidden shadow-sm flex-shrink-0 bg-black">
-                            <video autoplay loop muted playsinline class="w-full h-full object-cover">
-                                <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4">
-                            </video>
-                        </div>
-                        <div>
-                            <h3 class="font-heading text-2xl font-bold text-tripo-dark">Cartão Vitual</h3>
-                            <p class="text-gray-500 font-medium text-sm">Casual - Gratuito</p>
-                        </div>
+                <!-- Modelo 1 -->
+                <div class="snap-center shrink-0 w-64 md:w-72 rounded-[2rem] overflow-hidden shadow-2xl hover-scale border border-gray-700/50 group relative cursor-pointer">
+                    <img src="imagem/ca1.jpg" alt="Cartão Designer de Interiores" class="w-full h-auto object-cover transition-transform duration-700 group-hover:scale-105">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
+                        <span class="text-white font-medium text-sm">Design Elegante & Premium</span>
                     </div>
-                    <p class="text-gray-600 mb-8 text-sm leading-relaxed">
-                        Design interativo e de excelência otimizado para conversão. 
-                        Partilhe os seus contactos com um clique e gere impacto real para o seu negócio.
-                    </p>
                 </div>
 
-                <!-- Game 2: Robotrix -->
-                <div class="bg-tripo-light rounded-3xl p-8 lg:p-10 shadow-lg border border-gray-100 hover-scale lg:mr-auto max-w-md w-full">
-                    <div class="flex items-center gap-5 mb-6">
-                        <div class="w-20 h-20 rounded-2xl overflow-hidden shadow-sm flex-shrink-0 bg-black">
-                            <video autoplay loop muted playsinline class="w-full h-full object-cover">
-                                <source src="https://media.w3.org/2010/05/video/movie_300.mp4" type="video/mp4">
-                            </video>
-                        </div>
-                        <div>
-                            <h3 class="font-heading text-2xl font-bold text-tripo-dark">Robotrix</h3>
-                            <p class="text-gray-500 font-medium text-sm">RPG - Gratuito</p>
-                        </div>
+                <!-- Modelo 2 -->
+                <div class="snap-center shrink-0 w-64 md:w-72 rounded-[2rem] overflow-hidden shadow-2xl hover-scale border border-gray-700/50 group relative cursor-pointer">
+                    <img src="imagem/ca2.jpg" alt="Cartão Psicóloga Azul" class="w-full h-auto object-cover transition-transform duration-700 group-hover:scale-105">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
+                        <span class="text-white font-medium text-sm">Estilo Fotográfico Profissional</span>
                     </div>
-                    <p class="text-gray-600 mb-8 text-sm leading-relaxed">
-                        Sou um parágrafo. Clique aqui para adicionar seu texto. Sou um ótimo lugar para contar sua história e compartilhar mais sobre você.
-                    </p>
                 </div>
 
-              
+                <!-- Modelo 3 -->
+                <div class="snap-center shrink-0 w-64 md:w-72 rounded-[2rem] overflow-hidden shadow-2xl hover-scale border border-gray-700/50 group relative cursor-pointer">
+                    <img src="imagem/ca3.jpg" alt="Cartão Psicóloga Marrom" class="w-full h-auto object-cover transition-transform duration-700 group-hover:scale-105">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
+                        <span class="text-white font-medium text-sm">Tons Terrosos & Acolhedores</span>
+                    </div>
+                </div>
 
+                <!-- Modelo 4 -->
+                <div class="snap-center shrink-0 w-64 md:w-72 rounded-[2rem] overflow-hidden shadow-2xl hover-scale border border-gray-700/50 group relative cursor-pointer">
+                    <img src="imagem/ca4.jpg" alt="Cartão Geométrico" class="w-full h-auto object-cover transition-transform duration-700 group-hover:scale-105">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
+                        <span class="text-white font-medium text-sm">Design Geométrico Moderno</span>
+                    </div>
+                </div>
+
+            </div>
+            
+            <div class="mt-12 text-center">
+                <a href="#contato" class="inline-block bg-tripo-red text-white font-medium px-8 py-4 rounded-full shadow-lg hover:bg-red-700 hover:shadow-xl transition-all hover:-translate-y-1 border border-tripo-red/50">
+                    Solicitar Meu Cartão Digital
+                </a>
             </div>
         </div>
     </section>
@@ -258,44 +246,38 @@ Seu negócio aberto 24h </p>
             <div class="h-1/2 bg-tripo-dark w-full"></div>
         </div>
 
-        <div class="relative z-10 max-w-7xl mx-auto px-6 py-24 flex flex-col md:flex-row gap-12 items-center md:items-stretch">
+        <div class="relative z-10 max-w-7xl mx-auto px-6 py-24 flex flex-col md:flex-row gap-12 items-center justify-center">
             
             <!-- Headline Esquerda -->
-            <div class="w-full md:w-1/3 text-white md:mt-12 text-center md:text-left">
-                <h2 class="font-heading text-4xl md:text-5xl font-extrabold leading-tight">
+            <div class="w-full md:w-5/12 text-white md:mt-12 text-center md:text-left">
+                <h2 class="font-heading text-4xl md:text-5xl font-extrabold leading-tight drop-shadow-md">
                     Inovação em <br>cada detalhe.
                 </h2>
             </div>
 
             <!-- Formulário Card -->
-            <div class="w-full md:w-1/3 bg-white rounded-3xl p-8 shadow-2xl mt-8 md:mt-0">
+            <div class="w-full md:w-5/12 bg-white rounded-3xl p-8 shadow-2xl mt-8 md:mt-0">
                 <h3 class="font-heading text-xl font-bold text-tripo-dark mb-6">Fale conosco</h3>
                 <form class="space-y-4">
                     <div class="flex gap-4">
-                        <input type="text" placeholder="Nome *" class="w-1/2 border-b border-gray-300 py-2 focus:outline-none focus:border-tripo-red text-sm" required>
-                        <input type="text" placeholder="Sobrenome *" class="w-1/2 border-b border-gray-300 py-2 focus:outline-none focus:border-tripo-red text-sm" required>
+                        <input type="text" placeholder="Nome *" class="w-1/2 border-b border-gray-300 py-2 focus:outline-none focus:border-tripo-red text-sm transition-colors" required>
+                        <input type="text" placeholder="Sobrenome *" class="w-1/2 border-b border-gray-300 py-2 focus:outline-none focus:border-tripo-red text-sm transition-colors" required>
                     </div>
-                    <input type="email" placeholder="Email *" class="w-full border-b border-gray-300 py-2 focus:outline-none focus:border-tripo-red text-sm" required>
-                    <input type="tel" placeholder="Telefone" class="w-full border-b border-gray-300 py-2 focus:outline-none focus:border-tripo-red text-sm">
-                    <textarea placeholder="Deixe-nos uma mensagem..." class="w-full border-b border-gray-300 py-2 h-24 resize-none focus:outline-none focus:border-tripo-red text-sm" required></textarea>
-                    <button type="submit" class="w-full bg-tripo-dark text-white font-medium py-3 rounded-lg hover:bg-gray-800 transition">Enviar</button>
+                    <input type="email" placeholder="Email *" class="w-full border-b border-gray-300 py-2 focus:outline-none focus:border-tripo-red text-sm transition-colors" required>
+                    <input type="tel" placeholder="Telefone" class="w-full border-b border-gray-300 py-2 focus:outline-none focus:border-tripo-red text-sm transition-colors">
+                    <textarea placeholder="Deixe-nos uma mensagem..." class="w-full border-b border-gray-300 py-2 h-24 resize-none focus:outline-none focus:border-tripo-red text-sm transition-colors" required></textarea>
+                    <button type="submit" class="w-full bg-tripo-dark text-white font-medium py-3 rounded-lg hover:bg-gray-800 transition-colors shadow-md mt-2">Enviar</button>
                 </form>
             </div>
-
-
             
         </div>
     </section>
 
     <!-- Footer -->
-    <footer class="bg-tripo-light pt-20 pb-10 border-t border-gray-200">
+    <footer class="bg-tripo-light pt-12 pb-6 border-t border-gray-200">
         <div class="max-w-7xl mx-auto px-6">
-            <div class="grid grid-cols-1 md:grid-cols-4 gap-10 mb-16">
-                
-               
-            
             <!-- Linha de Copyright -->
-            <div class="border-t border-gray-200 pt-8 text-center text-xs text-gray-500">
+            <div class="text-center text-xs text-gray-500 font-medium">
                 <p>&copy; 2026 por Trends IA Studio. Orgulhosamente criado com dedicação.</p>
             </div>
         </div>
